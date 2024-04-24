@@ -14,15 +14,7 @@ disponivel(Nro, Disciplina) :-
     nth0(Disciplina, Disponibilidades, LinhaAtual),
     nth0(Nro, LinhaAtual, Valor),
     Valor =:= 1.
-
-contar([], _, 0).
-contar([X|Resto], X, N) :-
-    contar(Resto, X, NResto),
-    N is NResto + 1.
-contar([Y|Resto], X, N) :-
-    Y \= X,
-    contar(Resto, X, N).
-
+    
 decrementar_um([], _, []).
 decrementar_um([Elemento|Resto], 0, [NovoElemento|Resto]) :-
     NovoElemento is Elemento - 1, !.
